@@ -1,0 +1,433 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js" integrity="sha512-MqEDqB7me8klOYxXXQlB4LaNf9V9S0+sG1i8LtPOYmHqICuEZ9ZLbyV3qIfADg2UJcLyCm4fawNiFvnYbcBJ1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <!-- <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" /> -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Employees Payslip</title>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            text-indent: 0;
+        }
+
+        h1 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 18pt;
+        }
+
+        .s1 {
+            color: #505050;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 18pt;
+        }
+
+        .s2 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 9pt;
+        }
+
+        p {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 7.5pt;
+            margin: 0pt;
+        }
+
+        .s3 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 7.5pt;
+        }
+
+        .s4 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 9.5pt;
+        }
+
+        .s5 {
+            color: #858585;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 8pt;
+        }
+
+        .s6 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 9.5pt;
+            margin: 8px;
+        }
+
+        .s7 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: none;
+            font-size: 9.5pt;
+        }
+
+        h2 {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 9.5pt;
+        }
+
+        .t2 {
+            font-weight: bolder !important
+        }
+
+        .mr {
+            margin-left: 10%;
+        }
+
+        table,
+        tbody {
+            vertical-align: top;
+            overflow: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+        PAYSLIP <span class="s1">
+            [Client.date]
+        </span>
+    </h1>
+    <p class="s2" style="padding-top: 15pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+        [Client.CompanyName]
+    </p>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <p style="padding-left: 6pt;text-indent: 0pt;text-align: left;">[Client.RegisterAddress]</p>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <table style="border-collapse:collapse;margin-left:5.25pt;width: 100%;" cellspacing="0">
+        <tr style="height:52pt">
+            <td style="width:130pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <!--<p class="s3" style="text-indent: 0pt;line-height: 8pt;text-align: left;">
+                        INDORE MADHYA PRADESH 452010
+                    </p>-->
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                <p class="s4" style="padding-top: 6pt;text-indent: 0pt;text-align: left;">
+                    [Client.FirstName]
+                    [Client.LastName]
+                </p>
+            </td>
+            <td style="width:393pt;border-bottom-style:solid;border-bottom-width:1pt" colspan="4">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+        </tr>
+        <tr style="height:39pt">
+            <td style="width:130pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Employee Number</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.EmployeeId]</p>
+            </td>
+            <td style="width:131pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Date Joined</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.JoiningDate]</p>
+            </td>
+            <td style="width:121pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Department</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.DepartmentName]</p>
+            </td>
+            <!--<td style="width:89pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                    <p class="s5" style="padding-top: 7pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">
+                        Sub
+                        Department
+                    </p>
+                    <p class="s6" style="padding-top: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">N/A</p>
+                </td>-->
+            <td style="width:130pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Designation</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.DesignationName]</p>
+            </td>
+            <td style="width:52pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+        </tr>
+        <tr style="height:39pt">
+            <td style="width:130pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Bank Account</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.BankAccountNumber]</p>
+            </td>
+            <td style="width:130pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Payment Mode</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.PaymentMode]</p>
+            </td>
+            <td style="width:121pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">Bank</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.BankName]</p>
+            </td>
+            <td style="width:89pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">
+                    Bank IFSC
+                </p>
+                <p class="s6" style="padding-top: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">
+                    [Client.IFSC]
+                </p>
+            </td>
+            <td style="width:52pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+        </tr>
+
+        <tr style="height:39pt">
+            <td style="width:131pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">PAN</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.PanNumber]</p>
+            </td>
+            <!--<td style="width:121pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt">
+                    <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">UAN</p>
+                    <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">[Client.UAN]</p>
+                </td>-->
+            <!--<td style="width:89pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt">
+                    <p class="s5" style="padding-top: 7pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">
+                        PF Number
+                    </p>
+                    <p class="s6" style="padding-top: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">[Client.PFNumber]</p>
+                </td>-->
+            <td style="width:52pt;border-top-style:solid;border-top-width:1pt;border-top-color:#DCDCDC;border-bottom-style:solid;border-bottom-width:1pt">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+        </tr>
+        <tr style="height:50pt">
+            <td style="width:130pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+                <p class="s6" style="padding-top: 6pt;text-indent: 0pt;text-align: left;">SALARY DETAILS</p>
+            </td>
+            <td style="width:131pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+            <td style="width:121pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+            <td style="width:89pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+            <td style="width:52pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+        </tr>
+        <tr style="height:39pt">
+            <td style="width:130pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">ACTUAL PAYABLE DAYS</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">30.0</p>
+            </td>
+            <td style="width:131pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">TOTAL WORKING DAYS</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">30.0</p>
+            </td>
+            <td style="width:121pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;text-indent: 0pt;text-align: left;">LOSS OF PAY DAYS</p>
+                <p class="s6" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">0.0</p>
+            </td>
+            <td style="width:89pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p class="s5" style="padding-top: 7pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">
+                    DAYS PAYABLE
+                </p>
+                <p class="s6" style="padding-top: 2pt;padding-left: 9pt;text-indent: 0pt;text-align: left;">30</p>
+            </td>
+            <td style="width:52pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#DCDCDC">
+                <p style="text-indent: 0pt;text-align: left;"><br /></p>
+            </td>
+        </tr>
+    </table>
+
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-6">
+                <table>
+                    <tr>
+                        <td>
+                            <h3 class="s6 t2 ">EARNINGS</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6">Basic</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 ">[Client.Basic]</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6">Conveyance Allowance</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 ">[Client.ConveyanceAllowance]</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6">HRA</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 ">[Client.HRA]</h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6">Special Allowance</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 ">[Client.SpecialAllowance]</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6 t2">Total Earnings (A)</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 t2 ">
+                                [Client.TotalEarnings]
+                            </h3>
+                        </td>
+                    </tr>
+                    <!--<tr>
+                        <td>
+                            <h3 class="s6 t2 "> TAXES & DEDUCTIONS</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6">Professional Tax</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 ">
+                                [Client.ProfessionalTax]
+                            </h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6 t2">Total Deductions (B)</h3>
+                        </td>
+                        <td class="col-lg-4 float-md-end   ">
+                            <h3 class="s6 t2">
+                                [Client.TotalDeductions]
+                            </h3>
+                        </td>
+                    </tr>-->
+                </table>
+            </div>
+            <div class="col-lg-6"></div>
+        </div>
+    </div>
+
+    <hr style="height:3px;margin: 2px;text-align: center; color:gray;background-color:gray ">
+
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <!--<p class="s7" style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+        Net Salary Payable ( A - B )
+        [Client.NetSalaryPayable]
+    </p>
+    <p class="s7" style="padding-top: 3pt;padding-left: 6pt;text-indent: 0pt;text-align: left;">
+        Net Salary in words
+        <b> [Client.TotalEarningsinWords]</b>
+    </p>-->
+    <div class="col-lg-12">
+        <div class="row">
+            <div class="col-lg-6">
+                <table>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6 t2"> Net Salary Payable ( A - B )</h3>
+                        </td>
+                        <td class="col-lg-5 float-end   ">
+                            <h3 class="s6 t2">
+                                [Client.NetSalaryPayable]
+                            </h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-lg-3 float-end;">
+                            <h3 class="s6 t2"> Net Salary in words</h3>
+                        </td>
+                        <td class="col-lg-5 float-md-end   ">
+                            <h3 class="s6 t2">
+                                [Client.TotalEarningsinWords]
+                            </h3>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <h2 style="padding-left: 6pt;text-indent: 0pt;text-align: left;">
+        **Note : <i>
+            All amounts displayed in this payslip
+            are in
+        </i><i>INR</i>
+    </h2>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <p style="text-indent: 0pt;text-align: left;"><br /></p>
+    <p style="padding-left: 5pt;text-indent: 0pt;text-align: left;">
+        *This is computer generated statement, does not
+        require signature.
+    </p>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+</html>

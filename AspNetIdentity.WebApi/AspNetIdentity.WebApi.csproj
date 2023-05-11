@@ -1,0 +1,973 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE46F959-09B9-4182-9AEC-E66364EFC1AC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AspNetIdentity.WebApi</RootNamespace>
+    <AssemblyName>lica</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort>44330</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=22.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Cells.22.11.0\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.HTML, Version=22.10.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.HTML.22.10.0\lib\net40\Aspose.HTML.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.18.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.18.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Dommel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dommel.3.0.0\lib\netstandard2.0\Dommel.dll</HintPath>
+    </Reference>
+    <Reference Include="EASendMail, Version=7.9.1.6, Culture=neutral, PublicKeyToken=88adb80ecd66540b, processorArchitecture=MSIL">
+      <HintPath>..\packages\EASendMail.7.9.1.6\lib\net472\EASendMail.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Json.Net, Version=1.0.33.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Json.Net.1.0.33\lib\netstandard2.0\Json.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.9.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.23.1\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.23.1\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.23.1\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.23.1\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.2\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.4.2.2\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.2.2\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.2.2\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AspNetBackgroundTasks, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AspNetBackgroundTasks.1.0.0\lib\net45\Nito.AspNetBackgroundTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.5.1.1\lib\net46\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid.SmtpApi">
+      <HintPath>..\packages\SendGrid.SmtpApi.1.1.3\lib\net40\SendGrid.SmtpApi.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGridMail">
+      <HintPath>..\packages\Sendgrid.5.0.0\lib\SendGridMail.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.23.1\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Pkcs.6.0.1\lib\net461\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.7.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.2\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.9\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.Core">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.3.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="uploadimage\assets\logo-moreyeahs.png" />
+    <Content Include="uploadimage\badges\AmazingTeamPlayer.png" />
+    <Content Include="uploadimage\badges\AMentoringStar.png" />
+    <Content Include="uploadimage\badges\Contributer.png" />
+    <Content Include="uploadimage\badges\ExeededExpectations!.png" />
+    <Content Include="uploadimage\badges\GoodWork!.png" />
+    <Content Include="uploadimage\badges\OutStandingWork!.png" />
+    <Content Include="uploadimage\badges\TopPerformer.png" />
+    <Content Include="uploadimage\badges\Welldone.png" />
+    <Content Include="uploadimage\badges\yourearockstar.png" />
+    <Content Include="uploadimage\badges\youreastar.png" />
+    <Content Include="uploadimage\clientimages\Female1.jpg" />
+    <Content Include="uploadimage\clientimages\Female2.jpg" />
+    <Content Include="uploadimage\clientimages\Female3.jpg" />
+    <Content Include="uploadimage\clientimages\Male1.jpg" />
+    <Content Include="uploadimage\clientimages\Male2.jpg" />
+    <Content Include="uploadimage\clientimages\Male3.jpg" />
+    <Content Include="uploadimage\clientimages\Other1.jpg" />
+    <Content Include="uploadimage\clientimages\Other2.jpg" />
+    <Content Include="uploadimage\clientimages\Other3.jpg" />
+    <Content Include="uploadimage\flags\ad.svg" />
+    <Content Include="uploadimage\flags\ae.svg" />
+    <Content Include="uploadimage\flags\af.svg" />
+    <Content Include="uploadimage\flags\ag.svg" />
+    <Content Include="uploadimage\flags\ai.svg" />
+    <Content Include="uploadimage\flags\al.svg" />
+    <Content Include="uploadimage\flags\am.svg" />
+    <Content Include="uploadimage\flags\ao.svg" />
+    <Content Include="uploadimage\flags\aq.svg" />
+    <Content Include="uploadimage\flags\ar.svg" />
+    <Content Include="uploadimage\flags\as.svg" />
+    <Content Include="uploadimage\flags\at.svg" />
+    <Content Include="uploadimage\flags\au.svg" />
+    <Content Include="uploadimage\flags\aw.svg" />
+    <Content Include="uploadimage\flags\ax.svg" />
+    <Content Include="uploadimage\flags\az.svg" />
+    <Content Include="uploadimage\flags\ba.svg" />
+    <Content Include="uploadimage\flags\bb.svg" />
+    <Content Include="uploadimage\flags\bd.svg" />
+    <Content Include="uploadimage\flags\be.svg" />
+    <Content Include="uploadimage\flags\bf.svg" />
+    <Content Include="uploadimage\flags\bg.svg" />
+    <Content Include="uploadimage\flags\bh.svg" />
+    <Content Include="uploadimage\flags\bl.svg" />
+    <Content Include="uploadimage\flags\bm.svg" />
+    <Content Include="uploadimage\flags\bn.svg" />
+    <Content Include="uploadimage\flags\bo.svg" />
+    <Content Include="uploadimage\flags\bq.svg" />
+    <Content Include="uploadimage\flags\br.svg" />
+    <Content Include="uploadimage\flags\bs.svg" />
+    <Content Include="uploadimage\flags\bt.svg" />
+    <Content Include="uploadimage\flags\bv.svg" />
+    <Content Include="uploadimage\flags\bw.svg" />
+    <Content Include="uploadimage\flags\by.svg" />
+    <Content Include="uploadimage\flags\bz.svg" />
+    <Content Include="uploadimage\flags\ca.svg" />
+    <Content Include="uploadimage\flags\cc.svg" />
+    <Content Include="uploadimage\flags\cd.svg" />
+    <Content Include="uploadimage\flags\cf.svg" />
+    <Content Include="uploadimage\flags\cg.svg" />
+    <Content Include="uploadimage\flags\ch.svg" />
+    <Content Include="uploadimage\flags\ci.svg" />
+    <Content Include="uploadimage\flags\ck.svg" />
+    <Content Include="uploadimage\flags\cl.svg" />
+    <Content Include="uploadimage\flags\cm.svg" />
+    <Content Include="uploadimage\flags\cn.svg" />
+    <Content Include="uploadimage\flags\co.svg" />
+    <Content Include="uploadimage\flags\cr.svg" />
+    <Content Include="uploadimage\flags\cu.svg" />
+    <Content Include="uploadimage\flags\cv.svg" />
+    <Content Include="uploadimage\flags\cw.svg" />
+    <Content Include="uploadimage\flags\cx.svg" />
+    <Content Include="uploadimage\flags\cy.svg" />
+    <Content Include="uploadimage\flags\cz.svg" />
+    <Content Include="uploadimage\flags\de.svg" />
+    <Content Include="uploadimage\flags\dj.svg" />
+    <Content Include="uploadimage\flags\dk.svg" />
+    <Content Include="uploadimage\flags\dm.svg" />
+    <Content Include="uploadimage\flags\do.svg" />
+    <Content Include="uploadimage\flags\dz.svg" />
+    <Content Include="uploadimage\flags\ec.svg" />
+    <Content Include="uploadimage\flags\ee.svg" />
+    <Content Include="uploadimage\flags\eg.svg" />
+    <Content Include="uploadimage\flags\eh.svg" />
+    <Content Include="uploadimage\flags\er.svg" />
+    <Content Include="uploadimage\flags\es.svg" />
+    <Content Include="uploadimage\flags\et.svg" />
+    <Content Include="uploadimage\flags\eu.svg" />
+    <Content Include="uploadimage\flags\fi.svg" />
+    <Content Include="uploadimage\flags\fj.svg" />
+    <Content Include="uploadimage\flags\fk.svg" />
+    <Content Include="uploadimage\flags\fm.svg" />
+    <Content Include="uploadimage\flags\fo.svg" />
+    <Content Include="uploadimage\flags\fr.svg" />
+    <Content Include="uploadimage\flags\ga.svg" />
+    <Content Include="uploadimage\flags\gb-eng.svg" />
+    <Content Include="uploadimage\flags\gb-nir.svg" />
+    <Content Include="uploadimage\flags\gb-sct.svg" />
+    <Content Include="uploadimage\flags\gb-wls.svg" />
+    <Content Include="uploadimage\flags\gb.svg" />
+    <Content Include="uploadimage\flags\gd.svg" />
+    <Content Include="uploadimage\flags\ge.svg" />
+    <Content Include="uploadimage\flags\gf.svg" />
+    <Content Include="uploadimage\flags\gg.svg" />
+    <Content Include="uploadimage\flags\gh.svg" />
+    <Content Include="uploadimage\flags\gi.svg" />
+    <Content Include="uploadimage\flags\gl.svg" />
+    <Content Include="uploadimage\flags\gm.svg" />
+    <Content Include="uploadimage\flags\gn.svg" />
+    <Content Include="uploadimage\flags\gp.svg" />
+    <Content Include="uploadimage\flags\gq.svg" />
+    <Content Include="uploadimage\flags\gr.svg" />
+    <Content Include="uploadimage\flags\gs.svg" />
+    <Content Include="uploadimage\flags\gt.svg" />
+    <Content Include="uploadimage\flags\gu.svg" />
+    <Content Include="uploadimage\flags\gw.svg" />
+    <Content Include="uploadimage\flags\gy.svg" />
+    <Content Include="uploadimage\flags\hk.svg" />
+    <Content Include="uploadimage\flags\hm.svg" />
+    <Content Include="uploadimage\flags\hn.svg" />
+    <Content Include="uploadimage\flags\hr.svg" />
+    <Content Include="uploadimage\flags\ht.svg" />
+    <Content Include="uploadimage\flags\hu.svg" />
+    <Content Include="uploadimage\flags\id.svg" />
+    <Content Include="uploadimage\flags\ie.svg" />
+    <Content Include="uploadimage\flags\il.svg" />
+    <Content Include="uploadimage\flags\im.svg" />
+    <Content Include="uploadimage\flags\in.svg" />
+    <Content Include="uploadimage\flags\io.svg" />
+    <Content Include="uploadimage\flags\iq.svg" />
+    <Content Include="uploadimage\flags\ir.svg" />
+    <Content Include="uploadimage\flags\is.svg" />
+    <Content Include="uploadimage\flags\it.svg" />
+    <Content Include="uploadimage\flags\je.svg" />
+    <Content Include="uploadimage\flags\jm.svg" />
+    <Content Include="uploadimage\flags\jo.svg" />
+    <Content Include="uploadimage\flags\jp.svg" />
+    <Content Include="uploadimage\flags\ke.svg" />
+    <Content Include="uploadimage\flags\kg.svg" />
+    <Content Include="uploadimage\flags\kh.svg" />
+    <Content Include="uploadimage\flags\ki.svg" />
+    <Content Include="uploadimage\flags\km.svg" />
+    <Content Include="uploadimage\flags\kn.svg" />
+    <Content Include="uploadimage\flags\kp.svg" />
+    <Content Include="uploadimage\flags\kr.svg" />
+    <Content Include="uploadimage\flags\kw.svg" />
+    <Content Include="uploadimage\flags\ky.svg" />
+    <Content Include="uploadimage\flags\kz.svg" />
+    <Content Include="uploadimage\flags\la.svg" />
+    <Content Include="uploadimage\flags\lb.svg" />
+    <Content Include="uploadimage\flags\lc.svg" />
+    <Content Include="uploadimage\flags\li.svg" />
+    <Content Include="uploadimage\flags\lk.svg" />
+    <Content Include="uploadimage\flags\lr.svg" />
+    <Content Include="uploadimage\flags\ls.svg" />
+    <Content Include="uploadimage\flags\lt.svg" />
+    <Content Include="uploadimage\flags\lu.svg" />
+    <Content Include="uploadimage\flags\lv.svg" />
+    <Content Include="uploadimage\flags\ly.svg" />
+    <Content Include="uploadimage\flags\ma.svg" />
+    <Content Include="uploadimage\flags\mc.svg" />
+    <Content Include="uploadimage\flags\md.svg" />
+    <Content Include="uploadimage\flags\me.svg" />
+    <Content Include="uploadimage\flags\mf.svg" />
+    <Content Include="uploadimage\flags\mg.svg" />
+    <Content Include="uploadimage\flags\mh.svg" />
+    <Content Include="uploadimage\flags\mk.svg" />
+    <Content Include="uploadimage\flags\ml.svg" />
+    <Content Include="uploadimage\flags\mm.svg" />
+    <Content Include="uploadimage\flags\mn.svg" />
+    <Content Include="uploadimage\flags\mo.svg" />
+    <Content Include="uploadimage\flags\mp.svg" />
+    <Content Include="uploadimage\flags\mq.svg" />
+    <Content Include="uploadimage\flags\mr.svg" />
+    <Content Include="uploadimage\flags\ms.svg" />
+    <Content Include="uploadimage\flags\mt.svg" />
+    <Content Include="uploadimage\flags\mu.svg" />
+    <Content Include="uploadimage\flags\mv.svg" />
+    <Content Include="uploadimage\flags\mw.svg" />
+    <Content Include="uploadimage\flags\mx.svg" />
+    <Content Include="uploadimage\flags\my.svg" />
+    <Content Include="uploadimage\flags\mz.svg" />
+    <Content Include="uploadimage\flags\na.svg" />
+    <Content Include="uploadimage\flags\nc.svg" />
+    <Content Include="uploadimage\flags\ne.svg" />
+    <Content Include="uploadimage\flags\nf.svg" />
+    <Content Include="uploadimage\flags\ng.svg" />
+    <Content Include="uploadimage\flags\ni.svg" />
+    <Content Include="uploadimage\flags\nl.svg" />
+    <Content Include="uploadimage\flags\no.svg" />
+    <Content Include="uploadimage\flags\np.svg" />
+    <Content Include="uploadimage\flags\nr.svg" />
+    <Content Include="uploadimage\flags\nu.svg" />
+    <Content Include="uploadimage\flags\nz.svg" />
+    <Content Include="uploadimage\flags\om.svg" />
+    <Content Include="uploadimage\flags\pa.svg" />
+    <Content Include="uploadimage\flags\pe.svg" />
+    <Content Include="uploadimage\flags\pf.svg" />
+    <Content Include="uploadimage\flags\pg.svg" />
+    <Content Include="uploadimage\flags\ph.svg" />
+    <Content Include="uploadimage\flags\pk.svg" />
+    <Content Include="uploadimage\flags\pl.svg" />
+    <Content Include="uploadimage\flags\pm.svg" />
+    <Content Include="uploadimage\flags\pn.svg" />
+    <Content Include="uploadimage\flags\pr.svg" />
+    <Content Include="uploadimage\flags\ps.svg" />
+    <Content Include="uploadimage\flags\pt.svg" />
+    <Content Include="uploadimage\flags\pw.svg" />
+    <Content Include="uploadimage\flags\py.svg" />
+    <Content Include="uploadimage\flags\qa.svg" />
+    <Content Include="uploadimage\flags\re.svg" />
+    <Content Include="uploadimage\flags\ro.svg" />
+    <Content Include="uploadimage\flags\rs.svg" />
+    <Content Include="uploadimage\flags\ru.svg" />
+    <Content Include="uploadimage\flags\rw.svg" />
+    <Content Include="uploadimage\flags\sa.svg" />
+    <Content Include="uploadimage\flags\sb.svg" />
+    <Content Include="uploadimage\flags\sc.svg" />
+    <Content Include="uploadimage\flags\sd.svg" />
+    <Content Include="uploadimage\flags\se.svg" />
+    <Content Include="uploadimage\flags\sg.svg" />
+    <Content Include="uploadimage\flags\sh.svg" />
+    <Content Include="uploadimage\flags\si.svg" />
+    <Content Include="uploadimage\flags\sj.svg" />
+    <Content Include="uploadimage\flags\sk.svg" />
+    <Content Include="uploadimage\flags\sl.svg" />
+    <Content Include="uploadimage\flags\sm.svg" />
+    <Content Include="uploadimage\flags\sn.svg" />
+    <Content Include="uploadimage\flags\so.svg" />
+    <Content Include="uploadimage\flags\sr.svg" />
+    <Content Include="uploadimage\flags\ss.svg" />
+    <Content Include="uploadimage\flags\st.svg" />
+    <Content Include="uploadimage\flags\sv.svg" />
+    <Content Include="uploadimage\flags\sx.svg" />
+    <Content Include="uploadimage\flags\sy.svg" />
+    <Content Include="uploadimage\flags\sz.svg" />
+    <Content Include="uploadimage\flags\tc.svg" />
+    <Content Include="uploadimage\flags\td.svg" />
+    <Content Include="uploadimage\flags\tf.svg" />
+    <Content Include="uploadimage\flags\tg.svg" />
+    <Content Include="uploadimage\flags\th.svg" />
+    <Content Include="uploadimage\flags\tj.svg" />
+    <Content Include="uploadimage\flags\tk.svg" />
+    <Content Include="uploadimage\flags\tl.svg" />
+    <Content Include="uploadimage\flags\tm.svg" />
+    <Content Include="uploadimage\flags\tn.svg" />
+    <Content Include="uploadimage\flags\to.svg" />
+    <Content Include="uploadimage\flags\tr.svg" />
+    <Content Include="uploadimage\flags\tt.svg" />
+    <Content Include="uploadimage\flags\tv.svg" />
+    <Content Include="uploadimage\flags\tw.svg" />
+    <Content Include="uploadimage\flags\tz.svg" />
+    <Content Include="uploadimage\flags\ua.svg" />
+    <Content Include="uploadimage\flags\ug.svg" />
+    <Content Include="uploadimage\flags\um.svg" />
+    <Content Include="uploadimage\flags\un.svg" />
+    <Content Include="uploadimage\flags\us.svg" />
+    <Content Include="uploadimage\flags\uy.svg" />
+    <Content Include="uploadimage\flags\uz.svg" />
+    <Content Include="uploadimage\flags\va.svg" />
+    <Content Include="uploadimage\flags\vc.svg" />
+    <Content Include="uploadimage\flags\ve.svg" />
+    <Content Include="uploadimage\flags\vg.svg" />
+    <Content Include="uploadimage\flags\vi.svg" />
+    <Content Include="uploadimage\flags\vn.svg" />
+    <Content Include="uploadimage\flags\vu.svg" />
+    <Content Include="uploadimage\flags\wf.svg" />
+    <Content Include="uploadimage\flags\ws.svg" />
+    <Content Include="uploadimage\flags\ye.svg" />
+    <Content Include="uploadimage\flags\yt.svg" />
+    <Content Include="uploadimage\flags\za.svg" />
+    <Content Include="uploadimage\flags\zm.svg" />
+    <Content Include="uploadimage\flags\zw.svg" />
+    <Content Include="uploadimage\MailImages\emossy.png" />
+    <Content Include="uploadimage\noimagefound\femle1.jpg" />
+    <Content Include="uploadimage\noimagefound\femle2.jpg" />
+    <Content Include="uploadimage\noimagefound\femle3.jpg" />
+    <Content Include="uploadimage\noimagefound\femle4.jpg" />
+    <Content Include="uploadimage\noimagefound\male1.jpg" />
+    <Content Include="uploadimage\noimagefound\male2.jpg" />
+    <Content Include="uploadimage\noimagefound\male3.jpg" />
+    <Content Include="uploadimage\noimagefound\male4.jpg" />
+    <Content Include="uploadimage\Template\EmployeePayslip_Template\EmployeePayslip_Template.html" />
+    <Content Include="uploadimage\userimages\27\20220502032947PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502033520PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502033845PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502034148PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502034309PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502035132PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502040201PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\27\20220502040643PM.money 1.png" />
+    <Content Include="uploadimage\userimages\27\20220502040659PM.money 1.png" />
+    <Content Include="uploadimage\userimages\27\20220502040720PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\28\20220502054345PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\28\20220502055008PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\28\20220502060117PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\28\20220502064734PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\35\20220502030759PM.AmazingTeamPlayer.png" />
+    <Content Include="uploadimage\userimages\35\20220502030842PM.AmazingTeamPlayer.png" />
+    <Content Include="uploadimage\userimages\35\20220502031341PM.AmazingTeamPlayer.png" />
+    <Content Include="uploadimage\userimages\36\20220502045718PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\36\20220502051432PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\38\20220502114619AM.MicrosoftTeams-image %2840%29.png" />
+    <Content Include="uploadimage\userimages\41\20220503023228PM.shambhu kaka.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503023412PM.shambhu kaka.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503023503PM.shambhu kaka.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503023632PM.eid.png" />
+    <Content Include="uploadimage\userimages\41\20220503023720PM.shambhu kaka.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503023759PM.eid.png" />
+    <Content Include="uploadimage\userimages\41\20220503023807PM.shambhu kaka.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503053021PM.IMG-20220501-WA0003.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503053049PM.IMG-20220501-WA0003.jpg" />
+    <Content Include="uploadimage\userimages\41\20220503054901PM.IMG-20220501-WA0003.jpg" />
+    <Content Include="uploadimage\userimages\54\20220503025932PM.itachi.jpg" />
+    <Content Include="uploadimage\userimages\54\20220503041714PM.itachi.jpg" />
+    <Content Include="uploadimage\userimages\54\20220503054101PM.mylivewallpapers.com-Itachi-Uchiha-Naruto.mp4" />
+    <Content Include="uploadimage\userimages\54\20220503054354PM.mylivewallpapers.com-Itachi-Uchiha-Naruto %281%29.mp4" />
+    <Content Include="uploadimage\userimages\54\20220504010546PM.itachi.jpg" />
+    <Content Include="uploadimage\userimages\54\20220504010556PM.scary itachi.jpg" />
+    <Content Include="uploadimage\userimages\56\20220504122727PM.madra.jpg" />
+    <Content Include="uploadimage\userimages\61\20220504054032PM.naruto.jpg" />
+    <Content Include="uploadimage\userimages\64\20220519031455PM.hashirama.jpg" />
+    <Content Include="uploadimage\userimages\70\20220510113309AM.harshit.jpg" />
+    <Content Include="uploadimage\userimages\70\20220510113320AM.shiv.jpg" />
+    <Content Include="uploadimage\userimages\70\20220510113332AM.naruto.jpg" />
+    <Content Include="uploadimage\userimages\70\20220510113653AM.tobirama.jpg" />
+    <Content Include="uploadimage\userimages\85\20220530041517PM.AmazingTeamPlayer.png" />
+    <Content Include="uploadimage\userimages\87\20220510055322PM.Rectangle 3031.png" />
+    <Content Include="uploadimage\userimages\87\20220510060534PM.Rectangle 3031.png" />
+    <Content Include="Web.config" />
+    <Content Include="uploadimage\Template\Aspose.Total.NET.lic" />
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\IIS Profile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthorizationOperationFilter.cs" />
+    <Compile Include="App_Start\AuthTokenOperation.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\TokenConfig.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\AssetController.cs" />
+    <Compile Include="Controllers\Asset\AssetIconController.cs" />
+    <Compile Include="Controllers\Asset\AssetsController.cs" />
+    <Compile Include="Controllers\AttandanceNewController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
+    <Compile Include="Controllers\BankMasterController.cs" />
+    <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Controllers\CategoryControllerHindmt .cs" />
+    <Compile Include="Controllers\CategoryURLController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\Client Folder\ClientController.cs" />
+    <Compile Include="Controllers\ClientInfoController.cs" />
+    <Compile Include="Controllers\ClientNewRequirement\NewClientApprovalController.cs" />
+    <Compile Include="Controllers\ClientNewRequirement\NewClientController.cs" />
+    <Compile Include="Controllers\ClientNewRequirement\NewClientTaskController.cs" />
+    <Compile Include="Controllers\ClientNewRequirement\TypeofWorkController.cs" />
+    <Compile Include="Controllers\CloudSoftwareLicenseController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\CompetencyController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\CoreValueController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\CurrencyController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DepartmentNewController.cs" />
+    <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\DocumentMastersController.cs" />
+    <Compile Include="Controllers\EmossyWall\EmossyWallActionsController.cs" />
+    <Compile Include="Controllers\EmossyWall\EmossyWallController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\Employees\EmployeeActionController.cs" />
+    <Compile Include="Controllers\Employees\EmployeeExitsController.cs" />
+    <Compile Include="Controllers\Employees\EmployeeNewController.cs" />
+    <Compile Include="Controllers\Employees\EmployeeUpdateController.cs" />
+    <Compile Include="Controllers\EndrosmentController.cs" />
+    <Compile Include="Controllers\Excel\ExcelImportController.cs" />
+    <Compile Include="Controllers\Excel\FaultyImportController.cs" />
+    <Compile Include="Controllers\Excel\FaultylogsController.cs" />
+    <Compile Include="Controllers\Exits\ExitsSettingController.cs" />
+    <Compile Include="Controllers\ExpenseController.cs" />
+    <Compile Include="Controllers\ExperienceController.cs" />
+    <Compile Include="Controllers\FeedbackMasterController.cs" />
+    <Compile Include="Controllers\FileUploadController.cs" />
+    <Compile Include="Controllers\FrequentlyAskedQuestionsController.cs" />
+    <Compile Include="Controllers\Gift\GiftsController.cs" />
+    <Compile Include="Controllers\Goalmanagement\GoalPermissionController.cs" />
+    <Compile Include="Controllers\Goalmanagement\NewGoalmanagementController.cs" />
+    <Compile Include="Controllers\GoalsController.cs" />
+    <Compile Include="Controllers\Haeder\HeaderController.cs" />
+    <Compile Include="Controllers\HiringFlowMasterController.cs" />
+    <Compile Include="Controllers\HiringQuestion\HiringQuestionBankController.cs" />
+    <Compile Include="Controllers\HolidayController.cs" />
+    <Compile Include="Controllers\ImageUploadController.cs" />
+    <Compile Include="Controllers\ISA\UserDashboardController.cs" />
+    <Compile Include="Controllers\ISA\UserManagerController.cs" />
+    <Compile Include="Controllers\ItemMasterAddItemController.cs" />
+    <Compile Include="Controllers\ItemMasterCategoriesController.cs" />
+    <Compile Include="Controllers\ItemMasterWarehouseController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\LeaveModule\LeaveCentralController.cs" />
+    <Compile Include="Controllers\LeaveModule\LeaveMasterController.cs" />
+    <Compile Include="Controllers\LeaveModule\LeaveTypeController.cs" />
+    <Compile Include="Controllers\LeaveModule\ShiftMasterController.cs" />
+    <Compile Include="Controllers\LetsTalkController.cs" />
+    <Compile Include="Controllers\MailTemplate\HiringTemplateController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\NewPayRoll\BackGroundCheckController.cs" />
+    <Compile Include="Controllers\NewPayRoll\ExtraMasterController.cs" />
+    <Compile Include="Controllers\NewPayRoll\LegalEntityController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Group And Settings\PayGroupController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Group And Settings\PayGroupSettingController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Group And Settings\PayRollSaleryStructureController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Roll Components\HostingEnviormentController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Roll Components\PayGroupComponentsController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Roll Components\PayRollAdHocComponentController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Pay Roll Components\PayRollTaxDeductionComponentsController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Salary Breakup\CalculationController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Salary Breakup\EmployeeSaleryBreakDownController.cs" />
+    <Compile Include="Controllers\NewPayRoll\Salary Breakup\RunPayRollController.cs" />
+    <Compile Include="Controllers\NewProjectMasterInCrm\NewProjectMasterUseCrmController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\NewTimeSheet\NewSprintController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\OrgMasterController.cs" />
+    <Compile Include="Controllers\Payment\PaymentController.cs" />
+    <Compile Include="Controllers\Payroll\PayGroupController.cs" />
+    <Compile Include="Controllers\Payroll\PayRollCentralController.cs" />
+    <Compile Include="Controllers\Payroll\PayRollComponentsController.cs" />
+    <Compile Include="Controllers\Payroll\PayRollMasterController.cs" />
+    <Compile Include="Controllers\Payroll\PayRollSaleryStructureController.cs" />
+    <Compile Include="Controllers\Performence Controller\GroupReController.cs" />
+    <Compile Include="Controllers\Performence Controller\JobFuntionController.cs" />
+    <Compile Include="Controllers\Performence Controller\ObjectiveController.cs" />
+    <Compile Include="Controllers\PostWallController.cs" />
+    <Compile Include="Controllers\PreboardingController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectExpenseController.cs" />
+    <Compile Include="Controllers\ProjectMasterController.cs" />
+    <Compile Include="Controllers\ProjectReportController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\SkillGroupController.cs" />
+    <Compile Include="Controllers\SkillsController.cs" />
+    <Compile Include="Controllers\SkillsInSkillsGroupsController.cs" />
+    <Compile Include="Controllers\Skill\SkillMaterNewController.cs" />
+    <Compile Include="Controllers\SourceMasterController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Controllers\SuperAdmin\SuperAdminController.cs" />
+    <Compile Include="Controllers\Tax Master\TaxMasterController.cs" />
+    <Compile Include="Controllers\TeamMasterController.cs" />
+    <Compile Include="Controllers\Test\CheckCKEditorController.cs" />
+    <Compile Include="Controllers\Test\TestCKEditor.cs" />
+    <Compile Include="Controllers\Tickets\TicketCategoryController.cs" />
+    <Compile Include="Controllers\Tickets\TicketMasterController.cs" />
+    <Compile Include="Controllers\TimeSheetController.cs" />
+    <Compile Include="Controllers\TimeSheet\BackLogTaskController.cs" />
+    <Compile Include="Controllers\TimeSheet\KanbanBoardController.cs" />
+    <Compile Include="Controllers\TimeSheet\Project Related Work\DashboardList\NewProjectDashboardDataController.cs" />
+    <Compile Include="Controllers\TimeSheet\Project Related Work\EmployeeRoleInProjectController.cs" />
+    <Compile Include="Controllers\TimeSheet\Project Related Work\NewProjectDashboardController.cs" />
+    <Compile Include="Controllers\NewTimeSheet\NewSubProjectController.cs" />
+    <Compile Include="Controllers\TimeSheet\Project Related Work\ProjectDocumentController.cs" />
+    <Compile Include="Controllers\TimeSheet\Project Related Work\SubProjectController.cs" />
+    <Compile Include="Controllers\TimeSheet\ProjectMilestoneController.cs" />
+    <Compile Include="Controllers\TimeSheet\SprintController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskApprovelController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskCommentController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskCreationController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskDashboardController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskImportExportController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskLogController.cs" />
+    <Compile Include="Controllers\TimeSheet\TaskPermissionsController.cs" />
+    <Compile Include="Controllers\TimeSheet\Timesheet New\NewTaskCreationController.cs" />
+    <Compile Include="Controllers\ToDoList\ToDoListController.cs" />
+    <Compile Include="Controllers\TsfControllers\BlogControllers\BlogCategoryController.cs" />
+    <Compile Include="Controllers\TsfControllers\BlogControllers\BlogsActionController.cs" />
+    <Compile Include="Controllers\TsfControllers\BlogControllers\BlogsController.cs" />
+    <Compile Include="Controllers\TsfControllers\NewsControllers\CircularNoticeActionController.cs" />
+    <Compile Include="Controllers\TsfControllers\NewsControllers\CircularsController.cs" />
+    <Compile Include="Controllers\TsfControllers\NewsControllers\NewsActionServiceController.cs" />
+    <Compile Include="Controllers\TsfControllers\NewsControllers\NewsCategoryController.cs" />
+    <Compile Include="Controllers\TsfControllers\NewsControllers\NewsServiceController.cs" />
+    <Compile Include="Controllers\TsfControllers\NewsControllers\NoticesController.cs" />
+    <Compile Include="Controllers\TsfControllers\TsfDashboradController.cs" />
+    <Compile Include="Controllers\UIAccess\CompanyUserAccessController.cs" />
+    <Compile Include="Controllers\UIAccess\ModuleAccessController.cs" />
+    <Compile Include="Controllers\UIAccess\UserAccessPermissionController.cs" />
+    <Compile Include="Controllers\UserAttendance\AttendanceReportController.cs" />
+    <Compile Include="Controllers\UserAttendance\Events\EventController.cs" />
+    <Compile Include="Controllers\UserAttendance\Holidays\HolidayCentralController.cs" />
+    <Compile Include="Controllers\UserAttendance\Holidays\HolidayGroupController.cs" />
+    <Compile Include="Controllers\UserAttendance\NewAttendanceController.cs" />
+    <Compile Include="Controllers\UserAttendance\Holidays\NewHolidayController.cs" />
+    <Compile Include="Helper\EmailHelperClass.cs" />
+    <Compile Include="Helper\PayRollCentralHelper.cs" />
+    <Compile Include="Helper\SmtpMailHelper.cs" />
+    <Compile Include="Helper\TaskHelper.cs" />
+    <Compile Include="Helper\TimeConvertHelper.cs" />
+    <Compile Include="Helper\UserAccessPermissionHelper.cs" />
+    <Compile Include="Controllers\UploadControllerHindmt.cs" />
+    <Compile Include="Controllers\UserCommentController.cs" />
+    <Compile Include="Controllers\WarehouseCatApiController.cs" />
+    <Compile Include="Controllers\WarehouseCategoryController.cs" />
+    <Compile Include="Controllers\WarehouseController.cs" />
+    <Compile Include="Controllers\WorkFromHomeController.cs" />
+    <Compile Include="Handler\MessageHandlerHIndmt.cs" />
+    <Compile Include="Helper\AES256Hindmt.cs" />
+    <Compile Include="Helper\ClaimsHelper.cs" />
+    <Compile Include="Helper\ClientHelper.cs" />
+    <Compile Include="Helper\CurrencyHelper.cs" />
+    <Compile Include="Helper\DateHelper.cs" />
+    <Compile Include="Helper\HelperHindmt.cs" />
+    <Compile Include="Helper\JobHelper.cs" />
+    <Compile Include="Helper\LeaveHelper.cs" />
+    <Compile Include="Helper\MimeType.cs" />
+    <Compile Include="Helper\RatioHelper.cs" />
+    <Compile Include="Helper\RestClientHelper.cs" />
+    <Compile Include="Helper\ShiftHelper.cs" />
+    <Compile Include="Helper\TimeIntervalHelper.cs" />
+    <Compile Include="Helper\UserEmailHelper.cs" />
+    <Compile Include="Infrastructure\ApplicationDbContext.cs" />
+    <Compile Include="Infrastructure\ApplicationRole.cs" />
+    <Compile Include="Infrastructure\ApplicationRoleManager.cs" />
+    <Compile Include="Infrastructure\ApplicationUser.cs" />
+    <Compile Include="Infrastructure\ApplicationUserManager.cs" />
+    <Compile Include="Infrastructure\ClaimsAuthorizationAttribute.cs" />
+    <Compile Include="Infrastructure\ExtendedClaimsProvider.cs" />
+    <Compile Include="Interface\IFileUploadService.cs" />
+    <Compile Include="Interface\INewsService\ICircularsNoticesService.cs" />
+    <Compile Include="Interface\INewsService\INewsActionService.cs" />
+    <Compile Include="Interface\INewsService\INewsCategoryService.cs" />
+    <Compile Include="Interface\IShortByEnumService.cs" />
+    <Compile Include="Interface\IStoredProcedureService.cs" />
+    <Compile Include="Interface\ITicketService\ITicketCategoryService.cs" />
+    <Compile Include="Infrastructure\RolesFromClaims.cs" />
+    <Compile Include="Interface\IBlogServices\IBlogCategoryService.cs" />
+    <Compile Include="Interface\IBlogServices\IBlogsActionsService.cs" />
+    <Compile Include="Interface\IBlogServices\IBlogsSevice.cs" />
+    <Compile Include="Interface\INewsService\INewsService.cs" />
+    <Compile Include="Interface\ITsfService\ITsfDashboradService.cs" />
+    <Compile Include="Interface\IUserAccessService\ICompanyAccessService.cs" />
+    <Compile Include="Interface\IUserAccessService\IModuleAccessService.cs" />
+    <Compile Include="Interface\SprintInterface\ISprintService.cs" />
+    <Compile Include="Interface\SubProject\ISubProjectService.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CategoryAvg.cs" />
+    <Compile Include="Models\ClaimBindingModel.cs" />
+    <Compile Include="Models\DataHelper.cs" />
+    <Compile Include="Models\FeedbackDTO.cs" />
+    <Compile Include="Models\FeedbackVM.cs" />
+    <Compile Include="Models\GetcatName.cs" />
+    <Compile Include="Models\ModelFactory.cs" />
+    <Compile Include="Models\PurchaseOrderListHIndmt.cs" />
+    <Compile Include="Models\RoleBindingModels.cs" />
+    <Compile Include="Models\YearWeeklyDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\CustomJwtFormat.cs" />
+    <Compile Include="Providers\CustomOAuthProvider.cs" />
+    <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Result\ChallengeResult.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\FileUploadService.cs" />
+    <Compile Include="Services\NewsService\CircularsNoticesService.cs" />
+    <Compile Include="Services\EmailService.cs" />
+    <Compile Include="Services\EmployeeService.cs" />
+    <Compile Include="Services\ExpensesService.cs" />
+    <Compile Include="Services\FeedbackServices.cs" />
+    <Compile Include="Services\NewsService\NewsCategoryService.cs" />
+    <Compile Include="Services\NewsService\NewsActionService.cs" />
+    <Compile Include="Services\QuestionService.cs" />
+    <Compile Include="Services\ShortByService.cs" />
+    <Compile Include="Services\SprintService\SprintService.cs" />
+    <Compile Include="Services\StoredProcedureService.cs" />
+    <Compile Include="Services\SubProject\SubProjectService.cs" />
+    <Compile Include="Services\TeamService.cs" />
+    <Compile Include="Services\TicketService\TicketCategoryService.cs" />
+    <Compile Include="Services\BlogService\BlogCategoryService.cs" />
+    <Compile Include="Services\BlogService\BlogsActionsService.cs" />
+    <Compile Include="Services\BlogService\BlogsService.cs" />
+    <Compile Include="Services\NewsService\NewsService.cs" />
+    <Compile Include="Services\TsfService\TsfDashboradService.cs" />
+    <Compile Include="Services\UserAccessService\CompanyAccessService.cs" />
+    <Compile Include="Services\UserAccessService\ModuleAccessService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Validators\MyCustomPasswordValidator.cs" />
+    <Compile Include="Validators\MyCustomUserValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="uploadimage\PaySlips\" />
+    <Folder Include="uploadimage\ProofUpload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetIdentity.Core\AspNetIdentity.Core.csproj">
+      <Project>{e70db1ce-a5e8-491d-9759-a8a9a3ec971f}</Project>
+      <Name>AspNetIdentity.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LocalChecking|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59822</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44330</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\AspNetIdentity.Core.dll
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\AspNetIdentity.Core.pdb
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\EASendMail.dll
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\Newtonsoft.Json.dll
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\System.Security.Cryptography.Pkcs.dll
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\Newtonsoft.Json.xml
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\bin\Release\System.Security.Cryptography.Pkcs.xml
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\obj\Release\AspNetIdentity.Core.csproj.AssemblyReference.cache
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\obj\Release\AspNetIdentity.Core.csproj.CoreCompileInputs.cache
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\obj\Release\AspNetIdentity.Core.csproj.CopyComplete
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\obj\Release\AspNetIdentity.Core.dll
+C:\Users\hmitra\Desktop\Emossy New Backend\AspNetIdentity.Core\obj\Release\AspNetIdentity.Core.pdb
